@@ -24,15 +24,17 @@ function iconFor(type) {
   }
 }
 
-function openViewer(title, path, type) {
+function openViewer(title, id, path, type) {
   const modal = document.getElementById("modal");
   const viewer = document.getElementById("viewer");
   const modalTitle = document.getElementById("modal-title");
   modalTitle.textContent = title;
 
   if (type === "video") {
+    path = "public/disciplines/" + id + "/" + path;
     viewer.src = path;
   } else if (path.endsWith(".pdf")) {
+    path = "public/disciplines/" + id + "/" + path;
     viewer.src = path;
   } else {
     viewer.src = "about:blank";
@@ -92,7 +94,7 @@ function render(data) {
         a.textContent = it.title;
         a.onclick = (ev) => {
           ev.preventDefault();
-          openViewer(it.title, it.path, it.type);
+          openViewer(it.title, d.id, it.path, it.type);
         };
         info.appendChild(a);
         const small = document.createElement("div");
@@ -109,7 +111,7 @@ function render(data) {
 
     addSection("Aulas", d.lessons);
     addSection("Provas", d.exams);
-    addSection("Outros", d.others);
+    addSection("Atividades", d.others);
 
     if (d.tags && d.tags.length) {
       const tags = document.createElement("div");
@@ -131,9 +133,7 @@ function matches(d, q) {
       " " +
       (d.description || "") +
       " " +
-      (d.tags || []).join(" ") +
-      " " +
-      d.id
+      (d.tags || []).join(" ")
     ).toLowerCase();
     if (!s.includes(q)) return false;
   }

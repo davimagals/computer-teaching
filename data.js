@@ -1,25 +1,83 @@
 const DATA = [
   {
-    id: "davi",
-    title: "Algoritmos e Lógica de Programação",
+    id: "server-administration",
+    title: "Administração de Servidores",
     description:
-      "Introdução a algoritmos, pseudocódigo e estruturas de controle. Exercícios e provas.",
-    tags: ["programação", "algoritmo", "logica"],
+      "Conceitos; SO; Infraestrutura; Tipos: WEB, Arquivos, Vídeo, Jogos.",
+    tags: ["redes"],
     lessons: [
       {
         type: "pdf",
         title: "Aula 01 - Introdução",
-        path: "algoritmos/aula01-introducao.pdf",
+        path: "lessons/EEEP - AS - Aula 01 - Introdução.pdf",
       },
       {
         type: "pdf",
-        title: "Aula 02 - Variáveis e Tipos",
-        path: "algoritmos/aula02-variaveis.pdf",
+        title: "Aula 02 - Servidor WEB",
+        path: "lessons/EEEP - AS - Aula 02 - Servidor WEB.pdf",
       },
       {
-        type: "video",
-        title: "Aula 03 - Estruturas de Repetição",
-        path: "https://www.youtube.com/embed/dQw4w9WgXcQ",
+        type: "pdf",
+        title: "Aula 03 - Servidor de Vídeo",
+        path: "lessons/EEEP - AS - Aula 03 - Servidor de Vídeo.pdf",
+      },
+      {
+        type: "pdf",
+        title: "Aula 04 - Servidor de Arquivos",
+        path: "lessons/EEEP - AS - Aula 04 - Servidor de Arquivos.pdf",
+      },
+    ],
+    exams: [
+      {
+        type: "pdf",
+        title: "Parcial 1",
+        path: "exams/EEEP - AS - PROVA 1.pdf",
+      },
+    ],
+    others: [
+      {
+        type: "pdf",
+        title: "Aula 02 - Servidor WEB - Fixação",
+        path: "lessons/EEEP - AS - Aula 02 - Fixação.pdf",
+      },
+      {
+        type: "pdf",
+        title: "Aula 02 - Trabalho",
+        path: "lessons/EEEP - AS - Aula 02 - Trabalho v1.1.pdf",
+      },
+      {
+        type: "pdf",
+        title: "Aula 03 - Servidor de Vídeo - Fixação",
+        path: "lessons/EEEP - AS - Aula 03 - Fixação.pdf",
+      },
+      {
+        type: "pdf",
+        title: "Aula 03 - Trabalho v1.0",
+        path: "lessons/EEEP - AS - Aula 03 - Trabalho v1.0.pdf",
+      },
+      {
+        type: "pdf",
+        title: "Aula 03 - Trabalho v2.0",
+        path: "lessons/EEEP - AS - Aula 03 - Trabalho v2.0.pdf",
+      },
+      {
+        type: "pdf",
+        title: "Aula 04 - Servidor de Arquivos - Fixação",
+        path: "lessons/EEEP - AS - Aula 04 - Fixação.pdf",
+      },
+    ],
+  },
+  /*{
+    id: "server-administration",
+    title: "Administração de Servidores",
+    description:
+      "Conceitos; SO; Infraestrutura; Tipos: WEB, Arquivos, Vídeo, Jogos.",
+    tags: ["redes"],
+    lessons: [
+      {
+        type: "pdf",
+        title: "Aula 01 - Introdução",
+        path: "EEEP - AS - Aula 01 - Introdução.pdf",
       },
     ],
     exams: [
@@ -36,26 +94,5 @@ const DATA = [
         path: "algoritmos/exercicios.zip",
       },
     ],
-  },
-  {
-    id: "web",
-    title: "Desenvolvimento Web",
-    description:
-      "HTML, CSS, JavaScript, frameworks e melhores práticas para front-end.",
-    tags: ["web", "html", "css", "javascript", "frontend"],
-    lessons: [
-      {
-        type: "pdf",
-        title: "Aula 01 - HTML Básico",
-        path: "web/html-basico.pdf",
-      },
-      {
-        type: "video",
-        title: "Aula 02 - CSS Flexbox",
-        path: "https://www.youtube.com/embed/UB1O30fR-EE",
-      },
-    ],
-    exams: [],
-    others: [],
-  },
+  },*/
 ];
