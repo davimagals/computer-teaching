@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <title>Material de Apoio — Davi Magalhães</title>
+    <meta
+      name="description"
+      content="Material de apoio, aulas e provas das disciplinas técnicas dos cursos técnicos do eixo de TI das EPs do Estado do Ceará"
+    />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="notice">
+        Todo o material deste repositório foi produzido pelo professor
+        <strong>Davi Magalhães</strong> e está licenciado sob
+        <strong>Creative Commons</strong> (CC BY). É permitido copiar, adaptar e
+        compartilhar, desde que haja citação ao autor.
+      </div>
+
+      <header>
+        <div>
+          <h1>Material de Apoio</h1>
+          <p class="lead">
+            Aulas, PDFs, vídeos, provas e exercícios organizados por disciplina
+            e curso.
+          </p>
+        </div>
+      </header>
+
+      <div class="controls">
+        <div class="search">
+          <input
+            id="q"
+            type="text"
+            placeholder="Buscar por disciplina, título ou tag (ex: 'algoritmo', 'WEB')"
+          />
+        </div>
+        <div style="width: 220px">
+          <select id="filter-type">
+            <option value="all">Mostrar tudo</option>
+            <option value="ds">Desenvolvimento de Sistemas</option>
+            <option value="redes">Redes de Computadores</option>
+          </select>
+        </div>
+        <div>
+          <button id="reset">Limpar</button>
+        </div>
+      </div>
+
+      <main id="grid" class="grid" aria-live="polite">
+        <!-- Cards serão renderizados via JavaScript -->
+      </main>
+
+      <footer>
+        <div>
+          2025 - Repositório
+          <a
+            href="https://github.com/davimagals/computer-teaching"
+            target="_blank"
+          >
+            Computer Teaching
+          </a>
+        </div>
+      </footer>
+    </div>
+
+    <!-- modal para visualizar PDFs / vídeos -->
+    <div id="modal" class="modal" role="dialog" aria-modal="true">
+      <div class="panel">
+        <div
+          style="
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 8px;
+          "
+        >
+          <strong id="modal-title">Visualizador</strong>
+          <button class="close" id="close">Fechar ✕</button>
+        </div>
+        <iframe
+          id="viewer"
+          src="about:blank"
+          title="Visualizador de conteúdo"
+        ></iframe>
+      </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>

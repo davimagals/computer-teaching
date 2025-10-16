@@ -1,0 +1,146 @@
+const grid = document.getElementById("grid");
+const qInput = document.getElementById("q");
+const resetBtn = document.getElementById("reset");
+
+function mkTag(text) {
+  const span = document.createElement("span");
+  span.className = "tag";
+  span.textContent = text;
+  return span;
+}
+
+function iconFor(type) {
+  switch (type) {
+    case "pdf":
+      return "📄";
+    case "video":
+      return "🎥";
+    case "zip":
+      return "📦";
+    case "code":
+      return "💻";
+    default:
+      return "📁";
+  }
+}
+
+function openViewer(title, path, type) {
+  const modal = document.getElementById("modal");
+  const viewer = document.getElementById("viewer");
+  const modalTitle = document.getElementById("modal-title");
+  modalTitle.textContent = title;
+
+  if (type === "video") {
+    viewer.src = path;
+  } else if (path.endsWith(".pdf")) {
+    viewer.src = path;
+  } else {
+    viewer.src = "about:blank";
+    window.open(path, "_blank");
+    return;
+  }
+
+  modal.classList.add("open");
+}
+
+function closeViewer() {
+  const modal = document.getElementById("modal");
+  const viewer = document.getElementById("viewer");
+  viewer.src = "about:blank";
+  modal.classList.remove("open");
+}
+
+document.getElementById("close").addEventListener("click", closeViewer);
+document.getElementById("modal").addEventListener("click", (e) => {
+  if (e.target.id === "modal") closeViewer();
+});
+
+function render(data) {
+  grid.innerHTML = "";
+  data.forEach((d) => {
+    const card = document.createElement("article");
+    card.className = "card";
+    const h = document.createElement("h3");
+    h.innerHTML = `<span>${d.title}</span>`;
+    card.appendChild(h);
+    if (d.description) {
+      const desc = document.createElement("div");
+      desc.className = "meta";
+      desc.textContent = d.description;
+      card.appendChild(desc);
+    }
+
+    const addSection = (label, items) => {
+      if (!items || items.length === 0) return;
+      const secTitle = document.createElement("div");
+      secTitle.style.fontWeight = "600";
+      secTitle.style.marginTop = "8px";
+      secTitle.textContent = label;
+      card.appendChild(secTitle);
+      const list = document.createElement("div");
+      list.className = "list";
+      items.forEach((it) => {
+        const el = document.createElement("div");
+        el.className = "item";
+        const t = document.createElement("div");
+        t.className = "type";
+        t.textContent = iconFor(it.type);
+        const info = document.createElement("div");
+        info.style.flex = "1";
+        const a = document.createElement("a");
+        a.href = it.path;
+        a.textContent = it.title;
+        a.onclick = (ev) => {
+          ev.preventDefault();
+          openViewer(it.title, it.path, it.type);
+        };
+        info.appendChild(a);
+        const small = document.createElement("div");
+        small.style.color = "var(--muted)";
+        small.style.fontSize = "12px";
+        small.textContent = it.path;
+        info.appendChild(small);
+        el.appendChild(t);
+        el.appendChild(info);
+        list.appendChild(el);
+      });
+      card.appendChild(list);
+    };
+
+    addSection("Aulas", d.lessons);
+    addSection("Provas", d.exams);
+    addSection("Outros", d.others);
+
+    if (d.tags && d.tags.length) {
+      const tags = document.createElement("div");
+      tags.className = "tags";
+      d.tags.forEach((t) => tags.appendChild(mkTag(t)));
+      card.appendChild(tags);
+    }
+
+    grid.appendChild(card);
+  });
+}
+
+render(DATA);
+
+function matches(d, q) {
+  if (q) {
+    const s = (
+      d.title +
+      " " +
+      (d.description || "") +
+      " " +
+      (d.tags || []).join(" ") +
+      " " +
+      d.id
+    ).toLowerCase();
+    if (!s.includes(q)) return false;
+  }
+  return true;
+}
+
+qInput.addEventListener("input", () => {
+  const q = qInput.value.trim().toLowerCase();
+  render(DATA.filter((d) => matches(d, q)));
+});
