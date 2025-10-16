@@ -24,38 +24,10 @@ function iconFor(type) {
   }
 }
 
-function openViewer(title, id, path, type) {
-  const modal = document.getElementById("modal");
-  const viewer = document.getElementById("viewer");
-  const modalTitle = document.getElementById("modal-title");
-  modalTitle.textContent = title;
-
-  if (type === "video") {
-    path = "public/disciplines/" + id + "/" + path;
-    viewer.src = path;
-  } else if (path.endsWith(".pdf")) {
-    path = "public/disciplines/" + id + "/" + path;
-    viewer.src = path;
-  } else {
-    viewer.src = "about:blank";
-    window.open(path, "_blank");
-    return;
-  }
-
-  modal.classList.add("open");
+function openViewer(id, path) {
+  path = "public/disciplines/" + id + "/" + path;
+  window.open(path, "_blank");
 }
-
-function closeViewer() {
-  const modal = document.getElementById("modal");
-  const viewer = document.getElementById("viewer");
-  viewer.src = "about:blank";
-  modal.classList.remove("open");
-}
-
-document.getElementById("close").addEventListener("click", closeViewer);
-document.getElementById("modal").addEventListener("click", (e) => {
-  if (e.target.id === "modal") closeViewer();
-});
 
 function render(data) {
   grid.innerHTML = "";
@@ -94,7 +66,7 @@ function render(data) {
         a.textContent = it.title;
         a.onclick = (ev) => {
           ev.preventDefault();
-          openViewer(it.title, d.id, it.path, it.type);
+          openViewer(d.id, it.path);
         };
         info.appendChild(a);
         const small = document.createElement("div");
