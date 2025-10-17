@@ -24,11 +24,6 @@ function iconFor(type) {
   }
 }
 
-function openViewer(id, path) {
-  path = "public/disciplines/" + id + "/" + path;
-  window.open(path, "_blank");
-}
-
 function render(data) {
   grid.innerHTML = "";
   data.forEach((d) => {
@@ -62,12 +57,8 @@ function render(data) {
         const info = document.createElement("div");
         info.style.flex = "1";
         const a = document.createElement("a");
-        a.href = it.path;
+        a.href = `disciplines/${d.id}/${it.path}`;
         a.textContent = it.title;
-        a.onclick = (ev) => {
-          ev.preventDefault();
-          openViewer(d.id, it.path);
-        };
         info.appendChild(a);
         const small = document.createElement("div");
         small.style.color = "var(--muted)";

@@ -30,8 +30,28 @@ const DATA = [
     exams: [
       {
         type: "pdf",
-        title: "Parcial 1",
+        title: "1 - Parcial",
         path: "exams/EEEP - AS - PROVA 1.pdf",
+      },
+      {
+        type: "pdf",
+        title: "2 - Parcial",
+        path: "exams/EEEP - AS - PROVA 2 - 2a chamada.pdf",
+      },
+      {
+        type: "pdf",
+        title: "3 - Bimestral",
+        path: "exams/EEEP - AS - PROVA 3.pdf",
+      },
+      {
+        type: "pdf",
+        title: "4 - Bimestral",
+        path: "exams/EEEP - AS - PROVA 4 - v1.pdf",
+      },
+      {
+        type: "pdf",
+        title: "5 - Parcial",
+        path: "exams/EEEP - AS - PROVA 5.pdf",
       },
     ],
     others: [
