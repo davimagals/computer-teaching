@@ -1,5 +1,6 @@
 const grid = document.getElementById("grid");
 const qInput = document.getElementById("q");
+const filter = document.getElementById("filter-type");
 const resetBtn = document.getElementById("reset");
 
 function mkTag(text) {
@@ -89,7 +90,7 @@ function render(data) {
 
 render(DATA);
 
-function matches(d, q) {
+function matches(d, q, type) {
   if (q) {
     const s = (
       d.title +
@@ -100,10 +101,27 @@ function matches(d, q) {
     ).toLowerCase();
     if (!s.includes(q)) return false;
   }
+  if (type && type !== "all") {
+    if (type === "ds" && !d.tags.includes("ds")) return false;
+    if (type === "redes" && !d.tags.includes("redes")) return false;
+  }
   return true;
 }
 
 qInput.addEventListener("input", () => {
   const q = qInput.value.trim().toLowerCase();
-  render(DATA.filter((d) => matches(d, q)));
+  const t = filter.value;
+  render(DATA.filter((d) => matches(d, q, t)));
+});
+
+filter.addEventListener("change", () => {
+  const q = qInput.value.trim().toLowerCase();
+  const t = filter.value;
+  render(DATA.filter((d) => matches(d, q, t)));
+});
+
+resetBtn.addEventListener("click", () => {
+  qInput.value = "";
+  filter.value = "all";
+  render(DATA);
 });

@@ -1,4 +1,4 @@
-const DATA = [
+const DATA_SA = [
   {
     id: "server-administration",
     title: "Administração de Servidores",
@@ -40,12 +40,12 @@ const DATA = [
       },
       {
         type: "pdf",
-        title: "3 - Bimestral",
+        title: "3 - Global",
         path: "exams/EEEP - AS - PROVA 3.pdf",
       },
       {
         type: "pdf",
-        title: "4 - Bimestral",
+        title: "4 - Global",
         path: "exams/EEEP - AS - PROVA 4 - v1.pdf",
       },
       {

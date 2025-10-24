@@ -160,7 +160,8 @@ button {
   font-weight: 700;
   flex-shrink: 0;
 }
-.item a {
+.item a,
+.footer-link {
   color: var(--accent);
   text-decoration: none;
   word-break: break-word;

@@ -6,7 +6,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <title>Material de Apoio — Davi Magalhães</title>
+    <title>Material de Apoio — Prof. Davi Magalhães</title>
     <meta
       name="description"
       content="Material de apoio, aulas e provas das disciplinas técnicas dos cursos técnicos do eixo de TI das EPs do Estado do Ceará"
@@ -17,7 +17,7 @@
   <body>
     <div class="container">
       <div class="notice">
-        Todo o material deste repositório foi produzido por
+        Todo o material deste repositório foi produzido ou coletado por
         <strong>Davi Magalhães</strong> e está licenciado sob
         <strong>Creative Commons</strong> (CC BY). É permitido copiar, adaptar e
         compartilhar, desde que haja citação ao autor.
@@ -25,7 +25,7 @@
 
       <header>
         <div>
-          <h1>Material de Apoio - Davi Magalhães</h1>
+          <h1>Material de Apoio - Prof. Davi Magalhães</h1>
           <p class="lead">
             Aulas, PDFs, vídeos, provas e exercícios organizados por disciplina
             e curso.
@@ -38,12 +38,12 @@
           <input
             id="q"
             type="text"
-            placeholder="Buscar por disciplina, título ou tag (ex: 'algoritmo', 'WEB')"
+            placeholder="Buscar por disciplina, título ou tag (ex: 'gestão', 'WEB')"
           />
         </div>
         <div style="width: 220px">
           <select id="filter-type">
-            <option value="all">Mostrar tudo</option>
+            <option value="all">Todos os cursos</option>
             <option value="ds">Desenvolvimento de Sistemas</option>
             <option value="redes">Redes de Computadores</option>
           </select>
@@ -61,6 +61,7 @@
         <div>
           2025 - Davi Magalhães - Repositório
           <a
+            class="footer-link"
             href="https://github.com/davimagals/computer-teaching"
             target="_blank"
           >
@@ -70,7 +71,12 @@
       </footer>
     </div>
 
-    <script src="data.js"></script>
+    <script src="./disciplines/server-administration/data.js"></script>
+    <script src="./disciplines/programming-logic/javascript/data.js"></script>
+    <script src="./disciplines/computer-networks/data.js"></script>
+    <script>
+      const DATA = [...DATA_SA, ...DATA_PLJS, ...DATA_CN];
+    </script>
     <script src="script.js"></script>
   </body>
 </html>
