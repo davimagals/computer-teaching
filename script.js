@@ -58,7 +58,9 @@ function render(data) {
         const info = document.createElement("div");
         info.style.flex = "1";
         const a = document.createElement("a");
-        a.href = `disciplines/${d.id}/${it.path}`;
+        a.href = it.path.startsWith("http")
+          ? it.path
+          : `disciplines/${d.id}/${it.path}`;
         a.textContent = it.title;
         info.appendChild(a);
         const small = document.createElement("div");
