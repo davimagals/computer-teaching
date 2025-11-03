@@ -16,6 +16,10 @@ function iconFor(type) {
       return "📄";
     case "video":
       return "🎥";
+    case "image":
+      return "🖼️";
+    case "music":
+      return "🎵";
     case "zip":
       return "📦";
     case "code":

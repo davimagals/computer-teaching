@@ -40,6 +40,17 @@ header {
   gap: 16px;
 }
 
+header a {
+  color: black;
+}
+header a,
+.notice a {
+  text-decoration: none;
+}
+header a:hover {
+  text-decoration: underline;
+}
+
 .logo {
   width: 64px;
   height: 64px;
@@ -69,6 +80,10 @@ p.lead {
   border-radius: 8px;
   margin-bottom: 24px;
   font-size: 14px;
+}
+
+.notice a {
+  color: white;
 }
 
 .controls {

@@ -2,7 +2,8 @@ const DATA_OO = [
   {
     id: "object-oriented-programming",
     title: "Programação Orientada a Objetos (Typescript)",
-    description: "LAN; Tipologias; Equipamentos; Camadas do Modelo OSI",
+    description:
+      "Conceitos; Encapsulamento; Herança; Polimorfismo; Abstração; Classe e Objeto; Atributos e métodos",
     tags: ["ds"],
     lessons: [
       {

@@ -18,14 +18,17 @@
     <div class="container">
       <div class="notice">
         Todo o material deste repositório foi produzido ou coletado por
-        <strong>Davi Magalhães</strong> e está licenciado sob
-        <strong>Creative Commons</strong> (CC BY). É permitido copiar, adaptar e
-        compartilhar, desde que haja citação ao autor.
+        <a href="/"><strong>Davi Magalhães</strong></a> e está licenciado sob
+        <a
+          href="https://pt.wikipedia.org/wiki/Licen%C3%A7as_Creative_Commons"
+          target="_blank"
+          ><strong>Creative Commons</strong> (CC BY)</a
+        >. É permitido copiar, adaptar e compartilhar, desde que haja citação.
       </div>
 
       <header>
         <div>
-          <h1>Material de Apoio - Prof. Davi Magalhães</h1>
+          <h1>Material de Apoio - <a href="/">Prof. Davi Magalhães</a></h1>
           <p class="lead">
             Aulas, PDFs, vídeos, provas e exercícios organizados por disciplina
             e curso.
@@ -54,7 +57,7 @@
       </div>
 
       <main id="grid" class="grid" aria-live="polite">
-        <!-- Cards serão renderizados via JavaScript -->
+        <!-- Cards renderizados via JavaScript -->
       </main>
 
       <footer>
@@ -73,10 +76,17 @@
 
     <script src="./disciplines/server-administration/data.js"></script>
     <script src="./disciplines/programming-logic/javascript/data.js"></script>
+    <script src="./disciplines/career-planning/data.js"></script>
     <script src="./disciplines/object-oriented-programming/data.js"></script>
     <script src="./disciplines/computer-networks/data.js"></script>
     <script>
-      const DATA = [...DATA_SA, ...DATA_PLJS, ...DATA_OO, ...DATA_CN];
+      const DATA = [
+        ...DATA_SA,
+        ...DATA_PLJS,
+        ...DATA_CP,
+        ...DATA_OO,
+        ...DATA_CN,
+      ];
     </script>
     <script src="script.js"></script>
   </body>
