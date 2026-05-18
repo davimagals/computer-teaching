@@ -127,17 +127,22 @@ const DATA_DB = [
       {
         type: "image",
         title: "Sakila - Diagrama ER",
-        path: "lessons/sakila-er-original.png",
+        path: "lessons/Sakila/sakila-er-original.png",
       },
       {
         type: "image",
         title: "Sakila - Diagrama ER Traduzido",
-        path: "lessons/sakila-er-traduzido-chatgpt.png",
+        path: "lessons/Sakila/sakila-er-traduzido-chatgpt.png",
       },
       {
         type: "url",
         title: "Sakila - Online SQLize",
         path: "https://sqlize.online/",
+      },
+      {
+        type: "pdf",
+        title: "Sakila - Exercícios",
+        path: "lessons/Sakila/EEEP - BD - Exercícios SELECT - Sakila BD.pdf",
       },
     ],
   },
