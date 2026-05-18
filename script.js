@@ -24,6 +24,8 @@ function iconFor(type) {
       return "📦";
     case "code":
       return "💻";
+    case "url":
+      return "🔗";
     default:
       return "📁";
   }

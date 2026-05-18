@@ -119,6 +119,26 @@ const DATA_DB = [
         title: "YOUTUBE - Modelagem",
         path: "https://www.youtube.com/watch?v=SEnnucNP1h0",
       },
+      {
+        type: "url",
+        title: "Sakila - Banco de Dados",
+        path: "https://github.com/jOOQ/sakila",
+      },
+      {
+        type: "image",
+        title: "Sakila - Diagrama ER",
+        path: "lessons/sakila-er-original.png",
+      },
+      {
+        type: "image",
+        title: "Sakila - Diagrama ER Traduzido",
+        path: "lessons/sakila-er-traduzido-chatgpt.png",
+      },
+      {
+        type: "url",
+        title: "Sakila - Online SQLize",
+        path: "https://sqlize.online/",
+      },
     ],
   },
 ];
