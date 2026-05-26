@@ -132,7 +132,7 @@ const DATA_DB = [
       {
         type: "image",
         title: "Sakila - Diagrama ER Traduzido",
-        path: "lessons/Sakila/sakila-er-traduzido-chatgpt.png",
+        path: "lessons/Sakila/sakila-er-traduzido.png",
       },
       {
         type: "url",
