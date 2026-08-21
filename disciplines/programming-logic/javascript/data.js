@@ -67,32 +67,4 @@ const DATA_PLJS = [
       },
     ],
   },
-  /*{
-    id: "server-administration",
-    title: "Administração de Servidores",
-    description:
-      "Conceitos; SO; Infraestrutura; Tipos: WEB, Arquivos, Vídeo, Jogos.",
-    tags: ["redes"],
-    lessons: [
-      {
-        type: "pdf",
-        title: "Aula 01 - Introdução",
-        path: "EEEP - AS - Aula 01 - Introdução.pdf",
-      },
-    ],
-    exams: [
-      {
-        type: "pdf",
-        title: "Prova Bimestral 1",
-        path: "algoritmos/prova1.pdf",
-      },
-    ],
-    others: [
-      {
-        type: "zip",
-        title: "Lista de Exercícios (zip)",
-        path: "algoritmos/exercicios.zip",
-      },
-    ],
-  },*/
 ];
