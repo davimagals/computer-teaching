@@ -11,7 +11,7 @@ const DATA_SM2 = [
       {
         type: "pdf",
         title: "1 - Trabalho",
-        path: "exames/EEEP - GS2 - Trabalho 01.pdf",
+        path: "exams/EEEP - GS2 - Trabalho 01.pdf",
       },
     ],
   },
